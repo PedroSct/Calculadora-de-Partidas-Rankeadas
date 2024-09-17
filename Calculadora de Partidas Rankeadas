@@ -1,0 +1,39 @@
+# Função para calcular o saldo de rankeadas e determinar o nível do jogador
+def calculadora_rankeadas(vitorias, derrotas):
+    # Cálculo do saldo (vitórias - derrotas)
+    saldo = vitorias - derrotas
+
+    # Verificação do nível do jogador com base nas vitórias
+    if vitorias < 10:
+        nivel = "Ferro"
+    elif 11 <= vitorias <= 20:
+        nivel = "Bronze"
+    elif 21 <= vitorias <= 50:
+        nivel = "Prata"
+    elif 51 <= vitorias <= 80:
+        nivel = "Ouro"
+    elif 81 <= vitorias <= 90:
+        nivel = "Diamante"
+    elif 91 <= vitorias <= 100:
+        nivel = "Lendário"
+    else:
+        nivel = "Imortal"
+    
+    # Retorna o saldo e o nível do jogador
+    return saldo, nivel
+
+# Função principal para executar o programa
+def main():
+    # Solicitar o número de vitórias e derrotas do jogador
+    vitorias = int(input("Digite a quantidade de vitórias: "))
+    derrotas = int(input("Digite a quantidade de derrotas: "))
+    
+    # Chamar a função calculadora_rankeadas e armazenar o resultado
+    saldoVitorias, nivel = calculadora_rankeadas(vitorias, derrotas)
+    
+    # Exibir a mensagem com o saldo e o nível
+    print(f"O Herói tem um saldo de {saldoVitorias} e está no nível {nivel}.")
+
+# Executar o programa
+if __name__ == "__main__":
+    main()
